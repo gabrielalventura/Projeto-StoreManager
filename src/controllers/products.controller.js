@@ -2,9 +2,9 @@ const { productsService } = require('../services');
 const errorMap = require('../utils/errorMap');
 
 const listProducts = async (_req, res) => {
-  const { products } = await productsService.findAll();
+  const { message } = await productsService.findAll();
 
-  return res.status(200).json(products);
+  return res.status(200).json(message);
 };
 
 const listProductsById = async (req, res) => {
