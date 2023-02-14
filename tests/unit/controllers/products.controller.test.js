@@ -53,4 +53,8 @@ describe('Teste de unidade controller de products', function () {
       expect(res.json).to.have.been.calledWith(products);
     });
   });
+
+  afterEach(function () {
+    sinon.restore();
+  });
 });
