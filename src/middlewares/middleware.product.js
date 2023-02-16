@@ -1,5 +1,4 @@
 const { productsModel } = require('../models');
-// const errorMap = require('../utils/errorMap');
 
 const validateName = (req, res, next) => {
   const { name } = req.body;
