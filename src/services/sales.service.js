@@ -6,14 +6,15 @@ const findAll = async () => {
   return { type: null, message: products };
 };
 
-const findById = async (saleId) => {
-  const error = schema.idValidate(saleId);
+const findById = async (id) => {
+  const error = schema.idValidate(id);
 
   if (error.type) return error;
 
-  const product = await salesModel.findById(saleId);
+  const product = await salesModel.findById(id);
+  console.log('product', product);
 
-  if (!product) return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
+  if (!product.length) return { type: 'SALE_NOT_FOUND', message: 'Sale not found' };
 
   return { type: null, message: product };
 };

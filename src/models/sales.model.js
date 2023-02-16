@@ -8,18 +8,19 @@ const findAll = async () => {
     INNER JOIN StoreManager.sales_products AS p ON s.id = p.sale_id
       ORDER BY p.sale_id, p.product_id;`,
   );
+  // console.log('result', result);
   return camelize(result);
 };
 
 const findById = async (saleId) => {
-  const [[result]] = await connection.execute(
+  const [result] = await connection.execute(
     `SELECT s.date, p.product_id, p.quantity
     FROM StoreManager.sales AS s
     INNER JOIN StoreManager.sales_products AS p ON s.id = p.sale_id
-    WHERE s.id = ?
-      ORDER BY p.sale_id, p.product_id;`,
+    WHERE s.id = ? ORDER BY p.sale_id, p.product_id;`,
     [saleId],
   );
+  // console.log('result', result);
   return camelize(result);
 };
 
