@@ -88,13 +88,18 @@
     "colId": "history",
     "containerId": "",
     "name": "http://www.localhost:3000/products/8",
-    "url": "http://www.localhost:3000/sales/5",
-    "method": "GET",
+    "url": "http://www.localhost:3000/products/9",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-02-14T18:21:02.034Z",
-    "modified": "2023-02-16T17:38:55.198Z",
+    "modified": "2023-02-16T21:11:22.804Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{ \n  \"name\": \"Martelo do xablau\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {

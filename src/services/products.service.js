@@ -29,8 +29,22 @@ const addProduct = async (name) => {
   return { type: null, message: newProduct };
 };
 
+const updateById = async (id, product) => {
+  const hasProduct = await findById(id);
+  if (hasProduct.type) return hasProduct;
+   //  executa em cima do id passado, o service que identifica se o id existe ou não, e retorna a resposta para garantir que a modificação só ocorra em ids existentes; 
+
+  const validateName = schema.productNameValidate(product);
+  if (validateName.type) return validateName;
+
+  const newProduct = await productsModel.updateById(id, product);
+
+  return { type: null, message: newProduct };
+};
+
 module.exports = {
   findAll,
   findById,
   addProduct,
+  updateById,
 };
