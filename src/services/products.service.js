@@ -42,9 +42,22 @@ const updateById = async (id, product) => {
   return { type: null, message: newProduct };
 };
 
+const deleteById = async (productId) => {
+  const hasProduct = await productsModel.findById(productId);
+
+  if (!hasProduct) return { type: 404, message: 'Product not found' };
+
+  await productsModel.deleteById(productId);
+
+  return { type: null, message: '' };
+};
+
+// função desenvolvida com base na monitoria MSC do zero disponivel em: https://github.com/CarolinaKauark/msc-do-zero/blob/solved-exercise/src/services/person.service.js;
+
 module.exports = {
   findAll,
   findById,
   addProduct,
   updateById,
+  deleteById,
 };
