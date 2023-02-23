@@ -37,6 +37,13 @@ const insertSale = async (date) => {
     'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity ) VALUE (?, ?, ?);',
     [insertId, soldProduct.productId, soldProduct.quantity],
   );
+ };
+
+const deleteById = async (saleId) => {
+  await connection.execute(
+    'DELETE FROM StoreManager.sales_products WHERE sale_id =  ?',
+    [saleId],
+  );
 };
 
 module.exports = {
@@ -44,4 +51,5 @@ module.exports = {
   findById,
   insertSale,
   insertSoldProducts,
+  deleteById,
 };

@@ -88,11 +88,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://www.localhost:3000/products/8",
-    "url": "http://www.localhost:3000/products/1",
+    "url": "http://www.localhost:3000/sales/1",
     "method": "DELETE",
     "sortNum": 0,
     "created": "2023-02-14T18:21:02.034Z",
-    "modified": "2023-02-22T21:02:15.259Z",
+    "modified": "2023-02-23T13:31:55.920Z",
     "headers": [],
     "params": [],
     "body": {
