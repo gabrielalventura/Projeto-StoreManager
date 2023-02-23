@@ -38,7 +38,7 @@ const insertSale = async (itemsSold) => {
 const deleteById = async (saleId) => {
   const hasSale = await salesModel.findById(saleId);
 
-  if (!hasSale) return { type: 404, message: 'Sale not found' };
+  if (!hasSale.length) return { type: 404, message: 'Sale not found' };
 
   await salesModel.deleteById(saleId);
 
